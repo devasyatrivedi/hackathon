@@ -1,0 +1,12 @@
+# Redrob Ranker — runtime dependencies
+#
+# The ranker uses ONLY the Python standard library (json, csv, gzip, re,
+# difflib, heapq, concurrent.futures, dataclasses, argparse). This is a
+# deliberate choice: the Stage-3 reproduction sandbox is CPU-only with no
+# network, and a zero-dependency ranker removes install/version risk and
+# guarantees reproducibility.
+#
+# Python 3.11+ recommended.
+#
+# (Optional) the sandbox demo app uses Streamlit; it is NOT needed to produce
+# the submission CSV and is listed separately in sandbox/requirements.txt.

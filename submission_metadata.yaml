@@ -1,0 +1,64 @@
+
+team_name: "infinite VIDYA"
+
+primary_contact:
+  name: "Devasya Trivedi"
+  email: "13devasya94@gmail.com"
+  phone: "+91-9725800094"
+
+team_members: "NA"
+
+github_repo: "https://github.com/devasyatrivedi/hackathon"
+sandbox_link: "TODO https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+
+
+compute:
+  platform: "TODO e.g. Local Windows 11 box / AWS c5.4xlarge"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11"
+  os: "TODO e.g. Windows 11 / Ubuntu 22.04"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+# ============================================================================
+# AI tools declaration
+# ============================================================================
+ai_tools_used:
+  - "Claude"   # used for design review, code authoring assistance, and debugging
+
+ai_usage_summary: |
+  Used Claude (Claude Code) for architectural review of the scoring framework,
+  drafting and refactoring rank.py, and debugging the honeypot/tie-break logic.
+  All design decisions (pillar weights, evidence-over-keywords approach, honeypot
+  rules) were made and verified by the team. No candidate data was sent to any
+  hosted LLM, and the ranking step makes no network calls.
+
+# ============================================================================
+# Approach summary
+# ============================================================================
+methodology_summary: |
+  Rule-based, fully explainable ranker (Python stdlib only, ~25s for 100K on CPU).
+  Four pillars combined as: 0.30*skills+evidence + 0.45*production-experience +
+  0.15*years+seniority + location modifier, all multiplied by a behavioral
+  availability factor in [0.80, 1.10]; structurally-impossible profiles are
+  forced to -1.0. The decisive choice is weighting career-history EVIDENCE (what
+  the candidate actually built — ranking/retrieval/recsys at product companies)
+  above the raw skills keyword list, which directly defuses the keyword-stuffer
+  traps the JD warns about. Honeypots are detected with internally-consistent
+  career-duration math rather than unreliable education-year gates, giving 0
+  honeypots in the top 100. Top ranks are 6–9-year Applied ML / Recommendation /
+  Search / NLP engineers with production ranking experience.
+
+# ============================================================================
+# Declarations
+# ============================================================================
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
