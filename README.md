@@ -96,7 +96,6 @@ with production ranking-and-retrieval evidence — exactly the JD's ideal profil
 
 ```bash
 python rank.py --candidates data/candidates.jsonl --out submission.csv
-python data/validate_submission.py submission.csv   # -> "Submission is valid."
 python test_scoring.py                              # -> "14 passed, 0 failed"
 ```
 
