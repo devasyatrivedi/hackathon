@@ -10,7 +10,7 @@ team_members: "NA"
 
 github_repo: "https://github.com/devasyatrivedi/hackathon"
 sandbox_link: "https://devasyatrivedi-hackathon-sandboxapp-fv6kjh.streamlit.app/"
-huggingface_space_link: "https://huggingface.co/spaces/devasyatrivedi/Streamlit"
+huggingface_space_link: "https://huggingface.co/spaces/devasyatrivedi/redrob-ranker"
 reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
 
 
