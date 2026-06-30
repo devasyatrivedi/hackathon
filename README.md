@@ -1,7 +1,7 @@
-# Redrob Ranker — Senior AI Engineer Candidate Ranking
+# Redrob Ranker - Senior AI Engineer Candidate Ranking
 
 Ranks the top 100 candidates from a 100,000-candidate pool for the Redrob
-"Senior AI Engineer — Founding Team" role. Pure Python standard library, CPU-only,
+"Senior AI Engineer - Founding Team" role. Pure Python standard library, CPU-only,
 no network — produces a validated submission CSV in **~25 seconds** for 100K candidates.
 
 ## Quickstart (1 minute)
@@ -45,7 +45,7 @@ system at a product company* is. So the ranker reads **career-history evidence**
   ranking, Tier-2 fine-tuning/MLops, Tier-3 general) with alias + `difflib` fuzzy
   matching and an endorsement×duration *trust* weight. **Half the pillar comes from
   career-description evidence** (retrieval, ranking, recommendation, A/B testing…).
-  A keyword list with no career evidence is capped — this defuses the stuffer trap.
+  A keyword list with no career evidence is capped - this defuses the stuffer trap.
 - **P2 Production Experience (0.45, heaviest):** role-type, product-vs-services
   company tier, production/operational keywords, domain relevance ("built ranking/
   search/recsys"), tenure depth. Penalizes pure-research and services-only careers.
